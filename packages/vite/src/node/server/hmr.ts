@@ -20,6 +20,7 @@ export interface HmrOptions {
   path?: string
   timeout?: number
   overlay?: boolean
+  noServer?: boolean
 }
 
 export interface HmrContext {

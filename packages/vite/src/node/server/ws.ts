@@ -28,10 +28,11 @@ export function createWebSocketServer(
     })
   } else {
     // vite dev server in middleware mode
+    const hmr = typeof config.server.hmr === 'object' && config.server.hmr
+    const noServer = (hmr && hmr.noServer) || undefined
     wss = new WebSocket.Server({
-      port:
-        (typeof config.server.hmr === 'object' && config.server.hmr.port) ||
-        24678
+      noServer,
+      port: noServer ? undefined : (hmr && hmr.port) || 24678
     })
   }
 

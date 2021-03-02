@@ -391,7 +391,7 @@ export default ({ command, mode }) => {
 
 ### server.hmr
 
-- **Type:** `boolean | { protocol?: string, host?: string, port?: number, path?: string, timeout?: number, overlay?: boolean }`
+- **Type:** `boolean | { protocol?: string, host?: string, port?: number, path?: string, timeout?: number, overlay?: boolean, noServer?: boolean }`
 
   Disable or configure HMR connection (in cases where the HMR websocket must use a different address from the http server).
 
